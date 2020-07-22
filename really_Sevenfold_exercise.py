@@ -13,6 +13,7 @@ array_two_d_of_permutations = np.array(permutations_with_Repetition).astype(int)
 '''
 there are 4 cases:         (1): [1:9][0:9][0:9][7x 7],     (2): [1:9][0:9][7x 7][0:9]    there is repetition of the same numbers when generating pemutations in different cases
                            (3): [1:9][7x 7][0:9][0:9],     (4): [7x 7][0:9][0:9][0:9]    the solution to implement is set of elements that are in ( seven_folds_list)
+                                                                                         set(seven_folds_list) then we convert it to lis.
 '''
 #(1)
 sevens_1 = (np.ones((900,7))*7 ).astype(int)# 7777777
