@@ -11,8 +11,8 @@ permutations_with_Repetition = [p for p in itr.product(x_set, repeat=3)] #1000 p
 array_two_d_of_permutations = np.array(permutations_with_Repetition).astype(int) #convert the result into ndarray # shape (1000, 3)
 
 '''
-there are 4 cases:         (1): [1:9][0:9][0:9][7x 7],     (2): [1:9][0:9][7x 7][0:9]
-                           (3): [1:9][7x 7][0:9][0:9],     (4): [7x 7][0:9][0:9][0:9]
+there are 4 cases:         (1): [1:9][0:9][0:9][7x 7],     (2): [1:9][0:9][7x 7][0:9]    there is repetition of the same numbers when generating pemutations in different cases
+                           (3): [1:9][7x 7][0:9][0:9],     (4): [7x 7][0:9][0:9][0:9]    the solution to implement is set of elements that are in ( seven_folds_list)
 '''
 #(1)
 sevens_1 = (np.ones((900,7))*7 ).astype(int)# 7777777
@@ -59,10 +59,12 @@ Finally we check the prime numbers
 #define function to check prime numbers
 def check_prime(num):
     return num > 1 and all(num % d for d in range(2, int(num ** .5) + 1))
-count
+count = 0
 for number in seven_folds_list:
     if(check_prime(number) == True):
         print(number)
+        count+=1
+print(count)
 
 
 
